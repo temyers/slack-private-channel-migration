@@ -5,6 +5,10 @@ Sample project for building a Serverless, event driven, micro-service architectu
 
 Presented at Latency Conference 2017
 
+Committers:
+* Tim myerscough (@temyers)
+* William Sia (@williamsia)
+
 ## Pre-requisites
 
 * You have at least one Slack Account configured
