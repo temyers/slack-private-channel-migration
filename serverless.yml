@@ -1,0 +1,156 @@
+service: slack-private-channel-migration
+
+# plugins:
+#   - serverless-webpack
+
+custom:
+  webpackIncludeModules: true
+  myStage: ${opt:stage, self:provider.stage}
+  accountId: 00000000
+  dev_dead_letters: arn:aws:sns:ap-southeast-2:${self:custom.accountId}:slack_migration_dead_letters
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  stage: dev
+  region: ap-southeast-2
+  environment:
+    DYNAMODB_TABLE: ${self:service}-${opt:stage, self:provider.stage}
+    MIGRATE_MESSAGE_TOPIC: "arn:aws:sns:ap-southeast-2:${self:custom.accountId}:slack_migration_migrate_message"
+    CHANNEL_MIGRATED_TOPIC: "arn:aws:sns:ap-southeast-2:${self:custom.accountId}:slack_migration_channel_migrated"
+    MIGRATE_CHANNEL_TOPIC: "arn:aws:sns:ap-southeast-2:${self:custom.accountId}:slack_migration_migrate_channel"
+    RAPIDS_TOPIC: "arn:aws:sns:ap-southeast-2:${self:custom.accountId}:slack_migration_rapids"
+
+    SLACK_STREAM: "arn:aws:kinesis:ap-southeast-2:${self:custom.accountId}:stream/slack_stream"
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:DeleteItem
+      Resource: "arn:aws:dynamodb:${opt:region, self:provider.region}:*:table/${self:provider.environment.DYNAMODB_TABLE}"
+    - Effect: Allow
+      Action:
+        - sns:Publish
+      Resource: "arn:aws:sns:${opt:region, self:provider.region}:*:rapids"
+    - Effect: Allow
+      Action:
+        - sns:Publish
+      Resource: "arn:aws:sns:${opt:region, self:provider.region}:*:slack_migration*"
+    - Effect: Allow
+      Action:
+        - kinesis:PutRecords
+      Resource: "arn:aws:kinesis:ap-southeast-2:${self:custom.accountId}:stream/slack_stream"
+
+package:
+ include:
+   - src/common/**
+functions:
+  channel-migrated-svc:
+    handler: src/channel-migrated-svc/handler.on_msg
+    description: Channel Migrated Service
+    memorySize: 256
+    onError: ${self:custom.${self:custom.myStage}_dead_letters}
+    environment:
+      RAPIDS_TOPIC: ${self:provider.environment.RAPIDS_TOPIC}
+      TABLE_NAME: ${self:provider.environment.DYNAMODB_TABLE}
+      KINESIS_STREAM: "slack_stream"
+    events:
+      - sns:
+          arn: ${self:provider.environment.CHANNEL_MIGRATED_TOPIC}
+  dispatch-svc:
+    handler: src/dispatch-svc/handler.on_msg
+    description: Dispatch Service
+    memorySize: 256
+    onError: ${self:custom.${self:custom.myStage}_dead_letters}
+    environment:
+      MIGRATE_CHANNEL_TOPIC: ${self:provider.environment.MIGRATE_CHANNEL_TOPIC}
+      MIGRATE_MESSAGE_TOPIC: ${self:provider.environment.MIGRATE_MESSAGE_TOPIC}
+      CHANNEL_MIGRATED_TOPIC: ${self:provider.environment.CHANNEL_MIGRATED_TOPIC}
+    events:
+      - sns:
+          arn: ${self:provider.environment.RAPIDS_TOPIC}
+  migrate-channel-service:
+    handler: src/migrate-channel-svc/handler.on_msg
+    description: Migrate Channel Service - Source connection
+    memorySize: 1024
+    onError: ${self:custom.${self:custom.myStage}_dead_letters}
+    environment:
+      SOURCE_TEAM_TOKEN: ${env:SOURCE_TEAM_TOKEN_${self:custom.myStage}}
+      RAPIDS_TOPIC: ${self:provider.environment.RAPIDS_TOPIC}
+    events:
+      - sns:
+          arn: ${self:provider.environment.MIGRATE_CHANNEL_TOPIC}
+  migrate-message-service:
+    handler: src/migrate-message-svc/handler.on_msg
+    description: Migrate Message Service - Dest connection (Stub)
+    onError: ${self:custom.${self:custom.myStage}_dead_letters}
+    environment:
+      TARGET_TEAM_TOKEN: ${env:TARGET_TEAM_TOKEN_${self:custom.myStage}}
+      MIGRATE_TABLE: ${self:provider.environment.DYNAMODB_TABLE}
+      RAPIDS_TOPIC: ${self:provider.environment.RAPIDS_TOPIC}
+    events:
+      - sns:
+          arn: ${self:provider.environment.MIGRATE_MESSAGE_TOPIC}
+  post-message-service:
+    handler: src/post-message-svc/handler.on_msg
+    description: Post Message Service - Target connection
+    memorySize: 128
+    timeout: 60
+    onError: ${self:custom.${self:custom.myStage}_dead_letters}
+    environment:
+      TARGET_TEAM_TOKEN: ${env:TARGET_TEAM_TOKEN_${self:custom.myStage}}
+      SOURCE_TEAM_TOKEN: ${env:SOURCE_TEAM_TOKEN_${self:custom.myStage}}
+      RAPIDS_TOPIC: ${self:provider.environment.RAPIDS_TOPIC}
+    events:
+      - stream:
+          arn: ${self:provider.environment.SLACK_STREAM}
+          batchSize: 1
+          startingPosition: LATEST
+  create-channel-service:
+    handler: src/create-channel-svc/handler.on_msg
+    description: Create Channel Service - Target connection
+    memorySize: 128
+    onError: ${self:custom.${self:custom.myStage}_dead_letters}
+    environment:
+      TARGET_TEAM_TOKEN: ${env:TARGET_TEAM_TOKEN_${self:custom.myStage}}
+  event_log:
+      handler: src/event_log/handler.on_msg
+      description: Event Log
+      memorySize: 128
+      events:
+        - sns:
+            arn: ${self:provider.environment.RAPIDS_TOPIC}
+  error_log:
+      handler: src/event_log/handler.on_msg
+      description: Error Log
+      memorySize: 128
+      events:
+        - sns: ${self:custom.${self:custom.myStage}_dead_letters}
+resources:
+  Resources:
+    MigrationTable:
+      Type: 'AWS::DynamoDB::Table'
+      DeletionPolicy: Retain
+      Properties:
+        AttributeDefinitions:
+          -
+            AttributeName: channel
+            AttributeType: S
+          -
+            AttributeName: timestamp
+            AttributeType: N
+        KeySchema:
+          -
+            AttributeName: channel
+            KeyType: HASH
+          -
+            AttributeName: timestamp
+            KeyType: RANGE
+        ProvisionedThroughput:
+          ReadCapacityUnits: 1
+          WriteCapacityUnits: 1
+        TableName: ${self:provider.environment.DYNAMODB_TABLE}

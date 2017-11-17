@@ -1,0 +1,18 @@
+{
+    "Records": [{
+        "kinesis": {
+            "kinesisSchemaVersion": "1.0",
+            "partitionKey": "STRING_VALUE",
+            "sequenceNumber": "49575907902298891556332067079817175632158913267723403266",
+            "data": "FILL_ME_IN",
+            "approximateArrivalTimestamp": 1502334997.009
+        },
+        "eventSource": "aws:kinesis",
+        "eventVersion": "1.0",
+        "eventID": "shardId-000000000000:49575907902298891556332067079817175632158913267723403266",
+        "eventName": "aws:kinesis:record",
+        "invokeIdentityArn": "arn:aws:iam::613576916451:role/slack-private-channel-migration-dev-ap-southeast-2-lambdaRole",
+        "awsRegion": "ap-southeast-2",
+        "eventSourceARN": "arn:aws:kinesis:ap-southeast-2:613576916451:stream/slack_stream"
+    }]
+}

@@ -1,0 +1,6 @@
+{
+    "event": "file-posted",
+    "body": {
+        "ok": true
+    }
+}

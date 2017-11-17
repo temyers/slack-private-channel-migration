@@ -1,0 +1,7 @@
+{
+    "event": "create-channel",
+    "body": {
+        "channel_name": "public-test",
+        "team": "B"
+    }
+}

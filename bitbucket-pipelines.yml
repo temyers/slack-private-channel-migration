@@ -1,0 +1,41 @@
+
+image: node:6.10
+
+pipelines:
+  # CI Build
+  default:
+    - step:
+        caches:
+          - node
+        script:
+          # Map localstack
+          - echo '127.0.0.1 localstack' >> /etc/hosts
+          - yarn install
+          - npm test
+          - npm run test_it
+        services:
+          - localstack
+  branches:
+    master:
+      - step:
+          caches:
+            - node
+          script:
+            # Map localstack
+            - echo '127.0.0.1 localstack' >> /etc/hosts
+
+            - yarn install
+            - npm test
+            - npm run test:it
+            - npm run package
+            # deploy to DEV environment
+            - npm run deploy:dev
+          services:
+            - localstack
+
+definitions:
+  services:
+    localstack:
+      image: localstack/localstack
+      environment:
+        SERVICES: dynamodb,dynamodbstreams,kinesis

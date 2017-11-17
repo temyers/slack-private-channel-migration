@@ -1,0 +1,10 @@
+{
+    "event": "channel-migrated",
+    "body": {
+        "channel_name": "private-test",
+        "last_key": {
+          "channel": "private-test",
+          "timestamp": 48
+        }
+    }
+}

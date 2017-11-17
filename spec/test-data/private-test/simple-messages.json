@@ -1,0 +1,36 @@
+{
+   "ok" : true,
+   "messages" : [
+      {
+         "type" : "message",
+         "ts" : "1500363763.109276",
+         "text" : "cheers guffanor",
+         "user" : "U00000003"
+      },
+      {
+         "user" : "U00000001",
+         "ts" : "1500363752.105732",
+         "type" : "message",
+         "text" : "You will be imortalised for those words in github"
+      },
+      {
+         "text" : "thanks, that’s so helpful.",
+         "ts" : "1500363742.102380",
+         "type" : "message",
+         "user" : "U00000001"
+      },
+      {
+         "text" : "guff for you",
+         "ts" : "1500363732.099444",
+         "type" : "message",
+         "user" : "U00000003"
+      },
+      {
+         "user" : "U00000001",
+         "text" : "<!channel> Please post some random guff - I need test data.",
+         "ts" : "1500363720.095577",
+         "type" : "message"
+      }
+   ],
+   "has_more" : false
+}

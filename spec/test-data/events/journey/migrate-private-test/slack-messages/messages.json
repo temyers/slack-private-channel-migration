@@ -1,0 +1,143 @@
+{
+   "ok" : true,
+   "messages" : [
+      {
+         "ts" : "1500366307.014727",
+         "type" : "message",
+         "subtype" : "file_share",
+         "file" : {
+            "mimetype" : "text/plain",
+            "permalink" : "https://A.slack.com/files/user1/F6B6XEQNT/commands.txt",
+            "username" : "",
+            "url_private_download" : "https://files.slack.com/files-pri/T0447VA4B-F6B6XEQNT/download/commands.txt",
+            "external_type" : "",
+            "mode" : "snippet",
+            "is_external" : false,
+            "permalink_public" : "https://slack-files.com/T0447VA4B-F6B6XEQNT-e876e464df",
+            "preview_highlight" : "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text/plain',window.getSelection().toString().replace(/\\u200b/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>ls -l</pre></div>\n</div>\n</div>\n",
+            "is_public" : false,
+            "created" : 1500366306,
+            "name" : "commands.txt",
+            "editable" : true,
+            "public_url_shared" : false,
+            "pretty_type" : "Plain Text",
+            "timestamp" : 1500366306,
+            "channels" : [],
+            "title" : "commands",
+            "user" : "U00000001",
+            "filetype" : "text",
+            "lines_more" : 0,
+            "lines" : 1,
+            "size" : 5,
+            "preview_is_truncated" : false,
+            "comments_count" : 1,
+            "ims" : [],
+            "url_private" : "https://files.slack.com/files-pri/T0447VA4B-F6B6XEQNT/commands.txt",
+            "display_as_bot" : false,
+            "preview" : "ls -l",
+            "initial_comment" : {
+               "timestamp" : 1500366306,
+               "created" : 1500366306,
+               "id" : "Fc6B6XEW87",
+               "user" : "U00000001",
+               "is_intro" : true,
+               "comment" : "a comment"
+            },
+            "groups" : [
+               "G6B0E73P0"
+            ],
+            "id" : "F6B6XEQNT",
+            "edit_link" : "https://A.slack.com/files/user1/F6B6XEQNT/commands.txt/edit"
+         },
+         "bot_id" : null,
+         "upload" : true,
+         "text" : "<@U00000001|user1> uploaded a file: <https://A.slack.com/files/user1/F6B6XEQNT/commands.txt|commands> and commented: a comment",
+         "user" : "U00000001",
+         "username" : "user1",
+         "display_as_bot" : false
+      },
+      {
+         "bot_id" : "B04F2FZ9G",
+         "user" : "U00000001",
+         "ts" : "1500366277.003155",
+         "type" : "message",
+         "attachments" : [
+            {
+               "id" : 1,
+               "fallback" : "giphy: http://giphy.com/gifs/test-system-hyperloop-ZW5o1QcdEk3jq",
+               "image_bytes" : 864623,
+               "image_url" : "http://media0.giphy.com/media/ZW5o1QcdEk3jq/giphy-downsized.gif",
+               "footer" : "Posted using /giphy",
+               "is_animated" : true,
+               "title_link" : "http://giphy.com/gifs/test-system-hyperloop-ZW5o1QcdEk3jq",
+               "image_width" : 250,
+               "image_height" : 126,
+               "title" : "test"
+            }
+         ],
+         "text" : ""
+      },
+      {
+         "type" : "message",
+         "ts" : "1500363763.109276",
+         "text" : "cheers guffanor",
+         "user" : "U00000003"
+      },
+      {
+         "user" : "U00000001",
+         "ts" : "1500363752.105732",
+         "type" : "message",
+         "text" : "You will be imortalised for those words in github"
+      },
+      {
+         "text" : "thanks, that’s so helpful.",
+         "ts" : "1500363742.102380",
+         "type" : "message",
+         "user" : "U00000001"
+      },
+      {
+         "text" : "guff for you",
+         "ts" : "1500363732.099444",
+         "type" : "message",
+         "user" : "U00000003"
+      },
+      {
+         "user" : "U00000001",
+         "text" : "<!channel> Please post some random guff - I need test data.",
+         "ts" : "1500363720.095577",
+         "type" : "message"
+      },
+      {
+         "user" : "U00000002",
+         "text" : "<@U00000002|hamo> has joined the group",
+         "ts" : "1500363702.090068",
+         "subtype" : "group_join",
+         "type" : "message",
+         "inviter" : "U00000001"
+      },
+      {
+         "inviter" : "U00000001",
+         "type" : "message",
+         "ts" : "1500363702.090050",
+         "subtype" : "group_join",
+         "text" : "<@U00000003|williamsia> has joined the group",
+         "user" : "U00000003"
+      },
+      {
+         "purpose" : "Testing slack migration",
+         "ts" : "1500363683.084036",
+         "subtype" : "group_purpose",
+         "text" : "<@U00000001|user1> set the channel's purpose: Testing slack migration",
+         "type" : "message",
+         "user" : "U00000001"
+      },
+      {
+         "user" : "U00000001",
+         "subtype" : "group_join",
+         "ts" : "1500363682.083566",
+         "type" : "message",
+         "text" : "<@U00000001|user1> has joined the group"
+      }
+   ],
+   "has_more" : false
+}

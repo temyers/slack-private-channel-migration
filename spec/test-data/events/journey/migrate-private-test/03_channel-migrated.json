@@ -1,0 +1,6 @@
+{
+    "event": "channel-migrated",
+    "body": {
+        "channel_name": "private-test"
+    }
+}

@@ -1,0 +1,61 @@
+{
+   "ok" : true,
+   "messages" : [
+      {
+         "ts" : "1500366307.014727",
+         "type" : "message",
+         "subtype" : "file_share",
+         "file" : {
+            "mimetype" : "text/plain",
+            "permalink" : "https://A.slack.com/files/user1/F6B6XEQNT/commands.txt",
+            "username" : "",
+            "url_private_download" : "https://files.slack.com/files-pri/T0447VA4B-F6B6XEQNT/download/commands.txt",
+            "external_type" : "",
+            "mode" : "snippet",
+            "is_external" : false,
+            "permalink_public" : "https://slack-files.com/T0447VA4B-F6B6XEQNT-e876e464df",
+            "preview_highlight" : "<div class=\"CodeMirror cm-s-default CodeMirrorServer\" oncopy=\"if(event.clipboardData){event.clipboardData.setData('text/plain',window.getSelection().toString().replace(/\\u200b/g,''));event.preventDefault();event.stopPropagation();}\">\n<div class=\"CodeMirror-code\">\n<div><pre>ls -l</pre></div>\n</div>\n</div>\n",
+            "is_public" : false,
+            "created" : 1500366306,
+            "name" : "commands.txt",
+            "editable" : true,
+            "public_url_shared" : false,
+            "pretty_type" : "Plain Text",
+            "timestamp" : 1500366306,
+            "channels" : [],
+            "title" : "commands",
+            "user" : "U00000001",
+            "filetype" : "text",
+            "lines_more" : 0,
+            "lines" : 1,
+            "size" : 5,
+            "preview_is_truncated" : false,
+            "comments_count" : 1,
+            "ims" : [],
+            "url_private" : "https://files.slack.com/files-pri/T0447VA4B-F6B6XEQNT/commands.txt",
+            "display_as_bot" : false,
+            "preview" : "ls -l",
+            "initial_comment" : {
+               "timestamp" : 1500366306,
+               "created" : 1500366306,
+               "id" : "Fc6B6XEW87",
+               "user" : "U00000001",
+               "is_intro" : true,
+               "comment" : "a comment"
+            },
+            "groups" : [
+               "G6B0E73P0"
+            ],
+            "id" : "F6B6XEQNT",
+            "edit_link" : "https://A.slack.com/files/user1/F6B6XEQNT/commands.txt/edit"
+         },
+         "bot_id" : null,
+         "upload" : true,
+         "text" : "<@U00000001|user1> uploaded a file: <https://A.slack.com/files/user1/F6B6XEQNT/commands.txt|commands> and commented: a comment",
+         "user" : "U00000001",
+         "username" : "user1",
+         "display_as_bot" : false
+      }
+   ],
+   "has_more" : false
+}

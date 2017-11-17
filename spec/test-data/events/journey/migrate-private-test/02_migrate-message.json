@@ -1,0 +1,10 @@
+{
+    "event": "migrate-message",
+    "body": {
+        "user": "U00000001",
+        "ts": "1500363752.105732",
+        "type": "message",
+        "text": "You will be imortalised for those words in github",
+        "channel": "private-test"
+    }
+}

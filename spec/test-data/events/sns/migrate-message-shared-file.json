@@ -1,0 +1,28 @@
+{
+    "Records": [{
+        "EventVersion": "1.0",
+        "EventSource": "aws:sns",
+        "Sns": {
+            "SignatureVersion": "1",
+            "Timestamp": "1970-01-01T00:00:00.000Z",
+            "Signature": "EXAMPLE",
+            "SigningCertUrl": "EXAMPLE",
+            "MessageId": "95df01b4-ee98-5cb9-9903-4c221d41eb5e",
+            "Message": "{\r\n    \"event\": \"migrate-message\",\r\n    \"body\": {\r\n        \"ts\": \"1500366307.014727\",\r\n        \"type\": \"message\",\r\n        \"subtype\": \"file_share\",\r\n        \"channel\": \"private-test\",\r\n        \"file\": {\r\n            \"mimetype\": \"text\/plain\",\r\n            \"permalink\": \"https:\/\/A.slack.com\/files\/user1\/F6B6XEQNT\/commands.txt\",\r\n            \"username\": \"\",\r\n            \"url_private_download\": \"https:\/\/files.slack.com\/files-pri\/T0447VA4B-F6B6XEQNT\/download\/commands.txt\",\r\n            \"external_type\": \"\",\r\n            \"mode\": \"snippet\",\r\n            \"is_external\": false,\r\n            \"permalink_public\": \"https:\/\/slack-files.com\/T0447VA4B-F6B6XEQNT-e876e464df\",\r\n            \"preview_highlight\": \"<div class=\\\"CodeMirror cm-s-default CodeMirrorServer\\\" oncopy=\\\"if(event.clipboardData){event.clipboardData.setData('text\/plain',window.getSelection().toString().replace(\/\\\\u200b\/g,''));event.preventDefault();event.stopPropagation();}\\\">\\n<div class=\\\"CodeMirror-code\\\">\\n<div><pre>ls -l<\/pre><\/div>\\n<\/div>\\n<\/div>\\n\",\r\n            \"is_public\": false,\r\n            \"created\": 1500366306,\r\n            \"name\": \"commands.txt\",\r\n            \"editable\": true,\r\n            \"public_url_shared\": false,\r\n            \"pretty_type\": \"Plain Text\",\r\n            \"timestamp\": 1500366306,\r\n            \"channels\": [],\r\n            \"title\": \"commands\",\r\n            \"user\": \"U00000001\",\r\n            \"filetype\": \"text\",\r\n            \"lines_more\": 0,\r\n            \"lines\": 1,\r\n            \"size\": 5,\r\n            \"preview_is_truncated\": false,\r\n            \"comments_count\": 1,\r\n            \"ims\": [],\r\n            \"url_private\": \"https:\/\/files.slack.com\/files-pri\/T0447VA4B-F6B6XEQNT\/commands.txt\",\r\n            \"display_as_bot\": false,\r\n            \"preview\": \"ls -l\",\r\n            \"initial_comment\": {\r\n                \"timestamp\": 1500366306,\r\n                \"created\": 1500366306,\r\n                \"id\": \"Fc6B6XEW87\",\r\n                \"user\": \"U00000001\",\r\n                \"is_intro\": true,\r\n                \"comment\": \"a comment\"\r\n            },\r\n            \"groups\": [\r\n                \"G6B0E73P0\"\r\n            ],\r\n            \"id\": \"F6B6XEQNT\",\r\n            \"edit_link\": \"https:\/\/A.slack.com\/files\/user1\/F6B6XEQNT\/commands.txt\/edit\"\r\n        },\r\n        \"bot_id\": null,\r\n        \"upload\": true,\r\n        \"text\": \"<@U00000001|user1> uploaded a file: <https:\/\/A.slack.com\/files\/user1\/F6B6XEQNT\/commands.txt|commands> and commented: a comment\",\r\n        \"user\": \"U00000001\",\r\n        \"username\": \"user1\",\r\n        \"display_as_bot\": false\r\n    }\r\n}",
+            "MessageAttributes": {
+                "Test": {
+                    "Type": "String",
+                    "Value": "TestString"
+                },
+                "TestBinary": {
+                    "Type": "Binary",
+                    "Value": "TestBinary"
+                }
+            },
+            "Type": "Notification",
+            "UnsubscribeUrl": "EXAMPLE",
+            "TopicArn": "arn:aws:sns:ap-southeast-2:613576916451:rapids",
+            "Subject": "migrate-message"
+        }
+    }]
+}

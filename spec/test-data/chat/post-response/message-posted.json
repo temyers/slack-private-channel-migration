@@ -1,0 +1,13 @@
+{
+  "ok": true,
+  "ts": "1405895017.000506",
+  "channel": "C024BE91L",
+  "message": {
+    "text": "You will be imortalised for those words in github",
+    "username": "alice.adams",
+    "bot_id": "B695Z4V8B",
+    "type": "message",
+    "subtype": "bot_message",
+    "ts": "1500798171.123170"
+  }
+}

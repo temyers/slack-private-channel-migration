@@ -1,0 +1,19 @@
+teams:
+  A: magentys
+  B: mechanicalrock
+channels:
+  A:
+    private-test: migrate-source-priv
+  B:
+    private-test: migrate-dest-priv
+    public-test: migrate-dest-public
+users:
+  alice.adams:
+    A: U04FPCP43
+    B: U67ED46QL
+  bruce.banner:
+    A: U045Y39NV
+    B: U67DACH7H
+  charlie.chaplin:
+    A: U2Q1ZDQJY
+    B: U66V9T3FB

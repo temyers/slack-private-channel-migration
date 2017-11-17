@@ -1,0 +1,28 @@
+{
+    "Records": [{
+        "EventVersion": "1.0",
+        "EventSource": "aws:sns",
+        "Sns": {
+            "SignatureVersion": "1",
+            "Timestamp": "1970-01-01T00:00:00.000Z",
+            "Signature": "EXAMPLE",
+            "SigningCertUrl": "EXAMPLE",
+            "MessageId": "95df01b4-ee98-5cb9-9903-4c221d41eb5e",
+            "Message": "{\r\n    \"event\": \"migrate-message\",\r\n    \"body\": {\r\n        \"user\": \"U00000001\",\r\n        \"ts\": \"1500363752.105732\",\r\n        \"type\": \"message\",\r\n        \"text\": \"You will be imortalised for those words in github\",\r\n        \"channel\": \"private-test\"\r\n    }\r\n}",
+            "MessageAttributes": {
+                "Test": {
+                    "Type": "String",
+                    "Value": "TestString"
+                },
+                "TestBinary": {
+                    "Type": "Binary",
+                    "Value": "TestBinary"
+                }
+            },
+            "Type": "Notification",
+            "UnsubscribeUrl": "EXAMPLE",
+            "TopicArn": "arn:aws:sns:ap-southeast-2:613576916451:rapids",
+            "Subject": "migrate-message"
+        }
+    }]
+}

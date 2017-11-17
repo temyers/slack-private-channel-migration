@@ -1,0 +1,36 @@
+{
+   "ok" : true,
+   "messages" : [
+     {
+        "user" : "U00000001",
+        "text" : "<!channel> Please post some random guff - I need test data.",
+        "ts" : "1500363720.095577",
+        "type" : "message"
+     },
+     {
+        "user" : "U00000002",
+        "text" : "<@U00000002|hamo> has joined the group",
+        "ts" : "1500363702.090068",
+        "subtype" : "group_join",
+        "type" : "message",
+        "inviter" : "U00000001"
+     },
+     {
+        "inviter" : "U00000001",
+        "type" : "message",
+        "ts" : "1500363702.090050",
+        "subtype" : "group_join",
+        "text" : "<@U00000003|williamsia> has joined the group",
+        "user" : "U00000003"
+     },
+     {
+        "purpose" : "Testing slack migration",
+        "ts" : "1500363683.084036",
+        "subtype" : "group_purpose",
+        "text" : "<@U00000001|user1> set the channel's purpose: Testing slack migration",
+        "type" : "message",
+        "user" : "U00000001"
+     }
+   ],
+   "has_more" : true
+}

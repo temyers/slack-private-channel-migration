@@ -1,0 +1,11 @@
+{
+  "event": "migrate-channel",
+  "body":
+  {
+    "team_from": "A",
+    "group_from": "private-test",
+    "team_to": "B",
+    "group_to": "private-test",
+    "ts": "1500363732.099444"
+  }
+}

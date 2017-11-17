@@ -1,0 +1,15 @@
+/lib
+/node_modules
+example/service/.serverless
+example/service/.serverless_plugins
+# package directories
+node_modules
+jspm_packages
+dist
+
+# Webpack output
+.webpack
+
+# Serverless directories
+.serverless
+npm-debug.log

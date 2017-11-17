@@ -1,0 +1,34 @@
+{
+      {
+         "team_id" : "T7WQGNHFW",
+         "id" : "U7WLV4ZTM",
+         "profile" : {
+            "display_name" : "bruce.banner",
+            "display_name_normalized" : "bruce.banner",
+         },
+      },
+      {
+         "team_id" : "T7WQGNHFW",
+         "id" : "U7WP3UGKC",
+         "profile" : {
+            "display_name_normalized" : "charlie.chaplin",
+            "display_name" : "charlie.chaplin",
+         },
+      },
+      {
+         "team_id" : "T7WQGNHFW",
+         "profile" : {
+            "display_name_normalized" : "",
+            "display_name" : "",
+         },
+         "id" : "U7WQGNHPE",
+      },
+      {
+         "profile" : {
+            "display_name" : "slackbot",
+            "display_name_normalized" : "slackbot",
+         },
+         "id" : "USLACKBOT",
+         "team_id" : "T7WQGNHFW"
+      }
+}
