@@ -74,6 +74,12 @@ npm run test
 ```
 
 Run integration & acceptance tests
+In a separate host shell:
+```
+docker-compose up localstack
+```
+
+In your `dev-env` container
 ```
 export SOURCE_TEAM_TOKEN_integration=xoxp-123456789012-123456789012-123456789012-123456789012abcdef1234567890abcd
 npm run test_it
